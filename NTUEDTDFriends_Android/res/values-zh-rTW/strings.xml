@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">數位系友會</string>
+    <string name="action_about">關於</string>
+    <string name="finduson">go to facebook</string>
+    <string name="fbclub">\"數位系玩遊所系/所友會\"</string>
+    
+    <string name="news">最新消息</string>
+    <string name="signup">系友登錄</string>
+    <string name="photos">相片集錦</string>
+    <string name="donate">捐款節稅</string>
+    <string name="law">組織章程</string>
+    
+    <string name="maintain_info">歡迎各位在校學弟妹、系友協助維護、增進此系友會App。Source code已於Github上公開，Android與iOS版本並存，歡迎服務系友並添為個人履歷資歷。\n\n美術或資訊技術貢獻皆歡迎交流。</string>
+
+    <string name="read">已讀</string>
+    <string name="getlink">前往連結</string>
+    
+    <string name="about_content">本app由國立臺北教育大學數位科技設計系系友會製作，修改或再製此app授權請與數位系系友會聯絡。\nE-mail: s9519021@stu.ntue.edu.tw</string>
+    
+    <string name="share">分享</string>
+    <string name="share_fail">抱歉，發生錯誤，分享失敗&#8230;</string>
+    
+    <string name="ApplicationID"></string>
+    <string name="ClientKey"></string>
+    
+</resources>

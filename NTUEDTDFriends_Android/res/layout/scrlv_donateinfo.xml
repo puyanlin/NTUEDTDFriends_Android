@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="10dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="個人或營利事業捐款於國立臺北教育大學，視為對政府之捐贈，收據可於列舉扣除額100％抵稅，不受金額限制。\n
+"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/tv_getCreditCardDonateInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="信用卡捐款 [下載捐款授權書]"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="填寫完畢後，傳真或送至校友中心，傳真電話：(02)27388427 \n"
+            android:textColor="@color/Gray" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="銀行匯款與ATM轉帳"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="中國信託商業銀行\n國立臺北教育大學校務基金401專戶\n帳號：185-35000-4105" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="匯款或轉帳後，將憑證及您的姓名、連絡電話及指定用於「數位科技設計系/玩具與遊戲設計研究所」，傳真至國立臺北教育大學校友中心，傳真電話：02-27388427\n"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/Gray" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="支票"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="抬頭請寫「國立臺北教育大學校務基金401專戶」為收款人，並註明禁止背書轉讓，指定用於「數位科技設計系/玩具與遊戲設計研究所」，以掛號郵寄「106台北市和平東路二段134號國立臺北教育大學校友中心收」\n"
+            android:textColor="@color/Gray" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="現金"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="請逕至國立臺北教育大學出納組捐款。\n"
+            android:textColor="@color/Gray" />
+
+        <TextView
+            android:id="@+id/tv_link"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/lightGray"
+            android:padding="5dp"
+            android:text="國立臺北教育大學校友中心 >"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    </LinearLayout>
+    
+
+</ScrollView>
