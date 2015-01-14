@@ -50,7 +50,7 @@ public class MainActivity extends Activity implements OnClickListener {
 							   getResources().getString(R.string.signup),
 							   getResources().getString(R.string.photos),
 							   getResources().getString(R.string.donate),
-							   getResources().getString(R.string.law)};
+							   getResources().getString(R.string.articles)};
 		
 		
 		LinearLayout llSubjectContainer=(LinearLayout) findViewById(R.id.ll_SubjectContainer);
@@ -160,7 +160,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		    transaction.commit();
 			
 		}
-		if(((String)(v.getTag())).equalsIgnoreCase(getResources().getString(R.string.law))){
+		if(((String)(v.getTag())).equalsIgnoreCase(getResources().getString(R.string.articles))){
 			Fragment newFragment = new RuleFragment();
 		    transaction.replace(R.id.rl_main, newFragment);
 		    transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
