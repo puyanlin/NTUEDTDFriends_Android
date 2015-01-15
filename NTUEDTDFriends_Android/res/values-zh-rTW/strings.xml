@@ -7,6 +7,7 @@
     <string name="fbclub">\"數位系玩遊所系/所友會\"</string>
     
     <string name="news">最新消息</string>
+    <string name="jobs">工作機會</string>
     <string name="signup">系友登錄</string>
     <string name="photos">相片集錦</string>
     <string name="donate">捐款節稅</string>
@@ -21,6 +22,14 @@
     
     <string name="share">分享</string>
     <string name="share_fail">抱歉，發生錯誤，分享失敗&#8230;</string>
+    
+    <string name="job_CS">資訊</string>
+    <string name="job_Design">設計</string>
+    <string name="job_Manage">管理</string>
+    <string name="job_PT">工讀</string>
+    <string name="job_Other">其他</string>
+    
+    <string name="no_opportunity">暫無職缺資訊</string>
     
     <string name="ApplicationID"></string>
     <string name="ClientKey"></string>

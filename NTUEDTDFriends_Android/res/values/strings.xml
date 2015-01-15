@@ -7,6 +7,7 @@
     <string name="fbclub">\"DTD Alumni Association\"</string>
     
     <string name="news">News</string>
+    <string name="jobs">Jobs</string>
     <string name="signup">Sign up</string>
     <string name="photos">Photo Gallery</string>
     <string name="donate">Donate</string>
@@ -21,6 +22,14 @@
     
     <string name="share">share</string>
     <string name="share_fail">Sorry,it\'s fail to share&#8230;</string>
+    
+    <string name="job_CS">Computer Science</string>
+    <string name="job_Design">Design</string>
+    <string name="job_Manage">Management</string>
+    <string name="job_PT">Part time</string>
+    <string name="job_Other">Other</string>
+    
+    <string name="no_opportunity">No opportunity</string>
     
     <string name="ApplicationID"></string>
     <string name="ClientKey"></string>

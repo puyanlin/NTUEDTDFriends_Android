@@ -42,6 +42,4 @@ public class SignupFragment extends Fragment {
 		return mainView;
 	}
 
-	
-
 }
