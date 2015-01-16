@@ -1,5 +1,6 @@
 package tw.edu.ntue.dtd.friends;
 
+import tw.edu.ntue.dtd.R;
 import android.app.AlertDialog.Builder;
 import android.app.Fragment;
 import android.content.Context;

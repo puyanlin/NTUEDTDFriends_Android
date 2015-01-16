@@ -12,7 +12,7 @@
     <ScrollView
         android:id="@+id/scrlv_subjects"
         android:layout_width="fill_parent"
-        android:layout_height="250dp"
+        android:layout_height="300dp"
         android:fillViewport="true" >
 
         <LinearLayout

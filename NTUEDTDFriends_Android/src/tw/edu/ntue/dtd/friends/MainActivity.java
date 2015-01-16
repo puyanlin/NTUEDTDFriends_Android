@@ -1,5 +1,6 @@
 package tw.edu.ntue.dtd.friends;
 
+import tw.edu.ntue.dtd.R;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Fragment;
@@ -50,8 +51,9 @@ public class MainActivity extends Activity implements OnClickListener {
 							   getResources().getString(R.string.jobs),
 							   getResources().getString(R.string.signup),
 							   getResources().getString(R.string.photos),
+							   getResources().getString(R.string.articles),
 							   getResources().getString(R.string.donate),
-							   getResources().getString(R.string.articles)};
+							   };
 		
 		
 		LinearLayout llSubjectContainer=(LinearLayout) findViewById(R.id.ll_SubjectContainer);
@@ -162,14 +164,9 @@ public class MainActivity extends Activity implements OnClickListener {
 		}
 		
 		if(((String)(v.getTag())).equalsIgnoreCase(getResources().getString(R.string.donate))){
-			Fragment newFragment = new DonateFragment();
-		    transaction.replace(R.id.rl_main, newFragment);
-		    transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-		    transaction.addToBackStack(null);
-
-		    // Commit the transaction
-		    transaction.commit();
-			
+			Uri uri = Uri.parse("http://alumnus.ntue.edu.tw/donation2.php"); 
+		    Intent intent = new Intent(Intent.ACTION_VIEW, uri); 
+		    startActivity(intent);
 		}
 		if(((String)(v.getTag())).equalsIgnoreCase(getResources().getString(R.string.articles))){
 			Fragment newFragment = new RuleFragment();

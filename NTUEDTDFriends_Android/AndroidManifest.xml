@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="tw.edu.ntue.dtd.friends"
+    package="tw.edu.ntue.dtd"
     android:versionCode="5"
     android:versionName="1.1.78" >
 
@@ -22,8 +22,8 @@
 	  to match your app's package name + ".permission.C2D_MESSAGE".
 	-->
 	<permission android:protectionLevel="signature"
-	    android:name="tw.edu.ntue.dtd.friends.permission.C2D_MESSAGE" />
-	<uses-permission android:name="tw.edu.ntue.dtd.friends.permission.C2D_MESSAGE" />
+	    android:name="tw.edu.ntue.dtd.permission.C2D_MESSAGE" />
+	<uses-permission android:name="tw.edu.ntue.dtd.permission.C2D_MESSAGE" />
 
     <application
         android:allowBackup="true"
@@ -31,7 +31,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
+            android:name="tw.edu.ntue.dtd.friends.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -41,7 +41,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".PhotoGalleryActivity"
+            android:name="tw.edu.ntue.dtd.friends.PhotoGalleryActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
@@ -71,7 +71,7 @@
 		    
 		      IMPORTANT: Change "com.parse.starter" to match your app's package name.
 		   
-		    <category android:name="tw.edu.ntue.dtd.friends" />
+		    <category android:name="tw.edu.ntue.dtd" />
 		  </intent-filter>
 		</receiver>
 

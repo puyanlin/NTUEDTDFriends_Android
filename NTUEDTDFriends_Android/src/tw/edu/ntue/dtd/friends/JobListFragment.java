@@ -3,6 +3,8 @@ package tw.edu.ntue.dtd.friends;
 import java.util.ArrayList;
 import java.util.List;
 
+import tw.edu.ntue.dtd.R;
+
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
@@ -107,7 +109,7 @@ public class JobListFragment extends Fragment {
 		LayoutInflater inflater=(LayoutInflater)(getActivity().getSystemService(Activity.LAYOUT_INFLATER_SERVICE));
 		if(list.size()==0){
 			TextView tvNoOp=new TextView(getActivity());
-			tvNoOp.setText("¼ÈµLÂ¾¯Ê¸ê°T");
+			tvNoOp.setText(getResources().getString(R.string.no_opportunity));
 			secContainer.addView(tvNoOp);
 			tvNoOp.setPadding(5, 0,0,0);
 			return;
