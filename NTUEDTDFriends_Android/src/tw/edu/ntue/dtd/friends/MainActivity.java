@@ -1,5 +1,6 @@
 package tw.edu.ntue.dtd.friends;
 
+import tw.edu.ntue.dtd.R;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Fragment;
@@ -47,10 +48,12 @@ public class MainActivity extends Activity implements OnClickListener {
 	
 	private void initGUI(){
 		subTitles=new String[]{getResources().getString(R.string.news),
+							   getResources().getString(R.string.jobs),
 							   getResources().getString(R.string.signup),
 							   getResources().getString(R.string.photos),
+							   getResources().getString(R.string.articles),
 							   getResources().getString(R.string.donate),
-							   getResources().getString(R.string.articles)};
+							   };
 		
 		
 		LinearLayout llSubjectContainer=(LinearLayout) findViewById(R.id.ll_SubjectContainer);
@@ -107,7 +110,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		if (id == R.id.action_about) {
 			AlertDialog.Builder builder=new AlertDialog.Builder(MainActivity.this);
 			builder.setIcon(R.drawable.ic_launcher);
-			builder.setTitle("數位系友會");
+			builder.setTitle(R.string.app_name);
 			builder.setMessage(getResources().getString(R.string.about_content));
 			builder.setCancelable(true);
 			builder.show().setCanceledOnTouchOutside(true);
@@ -125,6 +128,16 @@ public class MainActivity extends Activity implements OnClickListener {
 	    FragmentTransaction transaction = getFragmentManager().beginTransaction();
 	    if(((String)(v.getTag())).equalsIgnoreCase(getResources().getString(R.string.news))){
 	    	Fragment newFragment = new NewsFragment();
+		    transaction.replace(R.id.rl_main, newFragment);
+		    transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+		    transaction.addToBackStack(null);
+
+		    // Commit the transaction
+		    transaction.commit();
+			
+		}
+	    if(((String)(v.getTag())).equalsIgnoreCase(getResources().getString(R.string.jobs))){
+	    	Fragment newFragment = new JobListFragment();
 		    transaction.replace(R.id.rl_main, newFragment);
 		    transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
 		    transaction.addToBackStack(null);
@@ -151,14 +164,9 @@ public class MainActivity extends Activity implements OnClickListener {
 		}
 		
 		if(((String)(v.getTag())).equalsIgnoreCase(getResources().getString(R.string.donate))){
-			Fragment newFragment = new DonateFragment();
-		    transaction.replace(R.id.rl_main, newFragment);
-		    transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-		    transaction.addToBackStack(null);
-
-		    // Commit the transaction
-		    transaction.commit();
-			
+			Uri uri = Uri.parse("http://alumnus.ntue.edu.tw/donation2.php"); 
+		    Intent intent = new Intent(Intent.ACTION_VIEW, uri); 
+		    startActivity(intent);
 		}
 		if(((String)(v.getTag())).equalsIgnoreCase(getResources().getString(R.string.articles))){
 			Fragment newFragment = new RuleFragment();

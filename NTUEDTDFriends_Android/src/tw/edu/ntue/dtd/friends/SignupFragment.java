@@ -1,5 +1,6 @@
 package tw.edu.ntue.dtd.friends;
 
+import tw.edu.ntue.dtd.R;
 import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.os.Bundle;
@@ -41,7 +42,5 @@ public class SignupFragment extends Fragment {
 		
 		return mainView;
 	}
-
-	
 
 }

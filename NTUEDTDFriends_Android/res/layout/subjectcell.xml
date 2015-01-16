@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="50dp"
+    android:background="@color/white"
     android:orientation="horizontal" >
 
 	<View
@@ -18,7 +19,7 @@
         android:layout_centerVertical="true"
         android:gravity="center_vertical"
         android:paddingLeft="10dp"
-        android:text="Medium Text"
+        android:text=""
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <ImageView

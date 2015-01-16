@@ -1,5 +1,6 @@
 package tw.edu.ntue.dtd.friends;
 
+import tw.edu.ntue.dtd.R;
 import android.app.AlertDialog.Builder;
 import android.app.Fragment;
 import android.content.Context;
@@ -24,22 +25,19 @@ import com.parse.ParseQueryAdapter;
 
 public class NewsFragment extends Fragment {
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		final RelativeLayout mainView=(RelativeLayout)inflater.inflate(R.layout.listview_news,container,false);
 		
 		final NewsAdapter adapter = new NewsAdapter(getActivity(), "DTDNotification");
 		adapter.setTextKey("title");
 	
-		
 		ListView lv=(ListView) mainView.findViewById(R.id.lv_news);
 		lv.setAdapter(adapter);
 		lv.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
+			public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
 				// TODO Auto-generated method stub
 
 				final ParseObject parseObject=adapter.getItem(position);
@@ -70,16 +68,18 @@ public class NewsFragment extends Fragment {
 						dialog.dismiss();
 					}
 				});
-				builder.setPositiveButton(getResources().getString(R.string.getlink), new OnClickListener() {
-					
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						// TODO Auto-generated method stub
-						Uri uri = Uri.parse(parseObject.getString("link")); 
-					    Intent intent = new Intent(Intent.ACTION_VIEW, uri); 
-					    startActivity(intent);
-					}
-				});
+				if(parseObject.getString("link")!=null&&!parseObject.getString("link").equalsIgnoreCase("")){
+					builder.setPositiveButton(getResources().getString(R.string.getlink), new OnClickListener() {
+						
+						@Override
+						public void onClick(DialogInterface dialog, int which) {
+							// TODO Auto-generated method stub
+							Uri uri = Uri.parse(parseObject.getString("link")); 
+						    Intent intent = new Intent(Intent.ACTION_VIEW, uri); 
+						    startActivity(intent);
+						}
+					});
+				}
 				
 				builder.show();
 			}
