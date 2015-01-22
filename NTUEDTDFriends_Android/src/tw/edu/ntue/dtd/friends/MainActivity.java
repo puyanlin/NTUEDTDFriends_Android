@@ -7,6 +7,7 @@ import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,14 +21,19 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.parse.ConfigCallback;
 import com.parse.Parse;
 import com.parse.ParseAnalytics;
+import com.parse.ParseConfig;
+import com.parse.ParseException;
 import com.parse.ParseInstallation;
 import com.parse.PushService;
 
 public class MainActivity extends Activity implements OnClickListener {
 	private final String TAG="MainActivity";
 	private String[] subTitles;
+	private ParseConfig mConfig;
+	
 	@SuppressWarnings("deprecation")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {	
@@ -56,17 +62,40 @@ public class MainActivity extends Activity implements OnClickListener {
 							   };
 		
 		
-		LinearLayout llSubjectContainer=(LinearLayout) findViewById(R.id.ll_SubjectContainer);
-		LayoutInflater inflater=(LayoutInflater)getSystemService(LAYOUT_INFLATER_SERVICE);
+		final LinearLayout llSubjectContainer=(LinearLayout) findViewById(R.id.ll_SubjectContainer);
+		final LayoutInflater inflater=(LayoutInflater)getSystemService(LAYOUT_INFLATER_SERVICE);
 		
 		for(String title : subTitles){
 			RelativeLayout cell=(RelativeLayout)inflater.inflate(R.layout.subjectcell,llSubjectContainer,false);
-			TextView tvTitle=(TextView) cell.findViewById(R.id.tv_title);
+			TextView tvTitle=(TextView) cell.findViewById(R.id.tv_candidateName);
 			tvTitle.setText(title);
 			cell.setTag(title);
 			cell.setOnClickListener(this);
 			llSubjectContainer.addView(cell);
 		}
+		
+		ParseConfig.getInBackground(new ConfigCallback() {
+			
+			@Override
+			public void done(ParseConfig config, ParseException exp) {
+				// TODO Auto-generated method stub
+				if(config!=null){
+					mConfig=config;
+					
+					if(config.getBoolean("isVoting")){
+						RelativeLayout cell=(RelativeLayout)inflater.inflate(R.layout.subjectcell,llSubjectContainer,false);
+						TextView tvTitle=(TextView) cell.findViewById(R.id.tv_candidateName);
+						tvTitle.setText(config.getString("votingTitle"));
+						cell.setOnClickListener(MainActivity.this);
+						cell.setTag(config.getString("votingTitle"));
+						llSubjectContainer.addView(cell, 0);
+					
+						cell.setBackgroundColor(Color.YELLOW);
+					}
+					
+				}
+			}
+		});
 		
 		LinearLayout ll_fbbtn=(LinearLayout) findViewById(R.id.ll_fbbtn);
 		ll_fbbtn.setOnClickListener(new OnClickListener() {
@@ -176,7 +205,15 @@ public class MainActivity extends Activity implements OnClickListener {
 
 		    // Commit the transaction
 		    transaction.commit();
-			
+		}
+		if(((String)(v.getTag())).equalsIgnoreCase(mConfig.getString("votingTitle"))){
+			Fragment newFragment = new CandidateInformationFragment();
+		    transaction.replace(R.id.rl_main, newFragment);
+		    transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+		    transaction.addToBackStack(null);
+
+		    // Commit the transaction
+		    transaction.commit();
 		}
 	}
 }

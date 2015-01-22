@@ -31,7 +31,14 @@
     
     <string name="no_opportunity">No opportunity</string>
     
+    <string name="CandidateInfo">Candidates</string>
+    <string name="goVote">Vote</string>
+    <string name="expeirnce">Experience</string>
+    <string name="politics">Politics</string>
+    
     <string name="ApplicationID"></string>
 	<string name="ClientKey"></string>
+
+
     
 </resources>

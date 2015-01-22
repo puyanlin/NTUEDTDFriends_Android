@@ -117,7 +117,7 @@ public class JobListFragment extends Fragment {
 		for(final ParseObject obj :list){
 			RelativeLayout jobrow=(RelativeLayout) inflater.inflate(R.layout.subjectcell, secContainer, false);
 			secContainer.addView(jobrow);
-			TextView rowTitle=(TextView) jobrow.findViewById(R.id.tv_title);
+			TextView rowTitle=(TextView) jobrow.findViewById(R.id.tv_candidateName);
 			rowTitle.setText(obj.getString("Title"));
 			
 			jobrow.setOnClickListener(new OnClickListener() {
