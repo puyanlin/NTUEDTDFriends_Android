@@ -109,7 +109,7 @@ public class PhotoGalleryActivity extends FragmentActivity{
 	            Bundle savedInstanceState) {
 	        RelativeLayout rootView = (RelativeLayout) inflater.inflate(
 	                R.layout.rl_imgview, container, false);
-	        ImageView imgView=(ImageView) rootView.findViewById(R.id.detail_indicator);
+	        ImageView imgView=(ImageView) rootView.findViewById(R.id.imgVoteInk);
 	        GetImageTask task=new GetImageTask(imgView,photoURLs.get(pageIndex).getString("url"));
 	        task.executeOnExecutor(AsyncTask.SERIAL_EXECUTOR);
 	        return rootView;

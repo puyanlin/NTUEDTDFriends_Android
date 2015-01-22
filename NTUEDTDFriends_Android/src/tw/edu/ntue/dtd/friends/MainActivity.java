@@ -67,7 +67,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		
 		for(String title : subTitles){
 			RelativeLayout cell=(RelativeLayout)inflater.inflate(R.layout.subjectcell,llSubjectContainer,false);
-			TextView tvTitle=(TextView) cell.findViewById(R.id.tv_title);
+			TextView tvTitle=(TextView) cell.findViewById(R.id.tv_candidateName);
 			tvTitle.setText(title);
 			cell.setTag(title);
 			cell.setOnClickListener(this);
@@ -84,7 +84,7 @@ public class MainActivity extends Activity implements OnClickListener {
 					
 					if(config.getBoolean("isVoting")){
 						RelativeLayout cell=(RelativeLayout)inflater.inflate(R.layout.subjectcell,llSubjectContainer,false);
-						TextView tvTitle=(TextView) cell.findViewById(R.id.tv_title);
+						TextView tvTitle=(TextView) cell.findViewById(R.id.tv_candidateName);
 						tvTitle.setText(config.getString("votingTitle"));
 						cell.setOnClickListener(MainActivity.this);
 						cell.setTag(config.getString("votingTitle"));

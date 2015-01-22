@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="請直接點選您支持的會長候選人，點按後將出現選舉章，送出投票前您都可以隨時修改您的選擇。"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/Gray" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/lightGray" />
+
+        <LinearLayout
+            android:id="@+id/ll_candidateContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/lightGray" />
+
+        <Button
+            android:id="@+id/btnClearChioce"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="清除選擇" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="點選清除選擇可取消目前所有選擇，沒有選擇任何候選人的選票投出後將成為廢票。"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/Gray" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/lightGray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="投票序號"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <EditText
+                android:id="@+id/edtTxtSerial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="投票序號" >
+
+                <requestFocus />
+            </EditText>
+
+            <Button
+                android:id="@+id/btn_sendSerial"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="驗證序號" />
+
+            <RelativeLayout
+                android:layout_width="50dp"
+                android:layout_height="match_parent" >
+
+                <CheckBox
+                    android:id="@+id/chckMark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:checked="true"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:longClickable="false"
+                    android:visibility="invisible" />
+
+                <ProgressBar
+                    android:id="@+id/progress_checkSerial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:visibility="invisible" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/lightGray" />
+
+        <Button
+            android:id="@+id/btnVote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="送出投票"
+            android:visibility="invisible" />
+
+    </LinearLayout>
+    
+
+</ScrollView>

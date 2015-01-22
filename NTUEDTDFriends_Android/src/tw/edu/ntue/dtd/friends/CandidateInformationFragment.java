@@ -53,8 +53,7 @@ public class CandidateInformationFragment extends Fragment {
 	
 	private void initGUI(View ParentView){
 		LayoutInflater inflater=(LayoutInflater)(getActivity().getSystemService(Activity.LAYOUT_INFLATER_SERVICE));
-		String[] sectionTitles=new String[]{getResources().getString(R.string.CandidateInfo),
-											""};
+		String[] sectionTitles=new String[]{getResources().getString(R.string.CandidateInfo),""};
 		
 		LinearLayout llcontainer=(LinearLayout) ParentView.findViewById(R.id.ll_SectionContainer);
 		for(int i=0;i<sectionTitles.length;i++){
@@ -65,7 +64,9 @@ public class CandidateInformationFragment extends Fragment {
 			llcontainer.addView(llSection);
 			
 			if(i==0) initRows(arrayCandidates, llSection);
-			else initSingleRows(getResources().getString(R.string.goVote), llSection);
+			else{
+				initSingleRows(getResources().getString(R.string.goVote), llSection);
+			}
 			
 		}
 		ProgressBar progress=(ProgressBar) ParentView.findViewById(R.id.groupedsecLoadingProgress);
@@ -78,7 +79,7 @@ public class CandidateInformationFragment extends Fragment {
 		for(final ParseObject obj :list){
 			RelativeLayout rowCandidate=(RelativeLayout) inflater.inflate(R.layout.subjectcell, secContainer, false);
 			secContainer.addView(rowCandidate);
-			TextView rowTitle=(TextView) rowCandidate.findViewById(R.id.tv_title);
+			TextView rowTitle=(TextView) rowCandidate.findViewById(R.id.tv_candidateName);
 			rowTitle.setText(candidateNumers[obj.getNumber("Number").intValue()]+" "+obj.getString("Name"));
 			
 			rowCandidate.setOnClickListener(new OnClickListener() {
@@ -103,8 +104,23 @@ public class CandidateInformationFragment extends Fragment {
 		LayoutInflater inflater=(LayoutInflater)(getActivity().getSystemService(Activity.LAYOUT_INFLATER_SERVICE));
 		RelativeLayout goVoteRow=(RelativeLayout) inflater.inflate(R.layout.subjectcell, secContainer, false);
 		secContainer.addView(goVoteRow);
-		TextView rowTitle=(TextView) goVoteRow.findViewById(R.id.tv_title);
+		TextView rowTitle=(TextView) goVoteRow.findViewById(R.id.tv_candidateName);
 		rowTitle.setText(title);
+		goVoteRow.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				FragmentTransaction transaction = getFragmentManager().beginTransaction();
+			    
+			    Fragment newFragment = new VoteViewFragment(arrayCandidates);
+				transaction.replace(R.id.rl_grouplist_container, newFragment);
+				transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+				transaction.addToBackStack(null);
+				transaction.commit();
+
+			}
+		});
 	}
 	
 	private class CandidateDetailFragment extends Fragment{
@@ -157,9 +173,9 @@ public class CandidateInformationFragment extends Fragment {
 			for(Object exp :list){
 				RelativeLayout rowCandidate=(RelativeLayout) inflater.inflate(R.layout.subjectcell, secContainer, false);
 				secContainer.addView(rowCandidate);
-				TextView rowTitle=(TextView) rowCandidate.findViewById(R.id.tv_title);
+				TextView rowTitle=(TextView) rowCandidate.findViewById(R.id.tv_candidateName);
 				rowTitle.setText((String)exp);
-				rowCandidate.findViewById(R.id.detail_indicator).setVisibility(View.GONE);
+				rowCandidate.findViewById(R.id.imgVoteInk).setVisibility(View.GONE);
 			}
 		}
 		
