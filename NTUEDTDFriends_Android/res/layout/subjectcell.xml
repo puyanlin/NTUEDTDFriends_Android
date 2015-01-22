@@ -23,7 +23,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <ImageView
-        android:id="@+id/imgview"
+        android:id="@+id/detail_indicator"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_alignParentRight="true"

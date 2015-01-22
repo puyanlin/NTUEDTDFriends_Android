@@ -82,7 +82,7 @@ public class MainActivity extends Activity implements OnClickListener {
 				if(config!=null){
 					mConfig=config;
 					
-					if(!config.getBoolean("isVoting")){
+					if(config.getBoolean("isVoting")){
 						RelativeLayout cell=(RelativeLayout)inflater.inflate(R.layout.subjectcell,llSubjectContainer,false);
 						TextView tvTitle=(TextView) cell.findViewById(R.id.tv_title);
 						tvTitle.setText(config.getString("votingTitle"));
@@ -207,7 +207,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		    transaction.commit();
 		}
 		if(((String)(v.getTag())).equalsIgnoreCase(mConfig.getString("votingTitle"))){
-			Fragment newFragment = new CandidateInformation();
+			Fragment newFragment = new CandidateInformationFragment();
 		    transaction.replace(R.id.rl_main, newFragment);
 		    transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
 		    transaction.addToBackStack(null);

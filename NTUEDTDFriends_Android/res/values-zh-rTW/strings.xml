@@ -33,8 +33,12 @@
     
     <string name="CandidateInfo">候選資訊</string>
     <string name="goVote">前往投票</string>
+    <string name="expeirnce">經歷</string>
+    <string name="politics">政見</string>
     
     <string name="ApplicationID"></string>
 	<string name="ClientKey"></string>
+
+
     
 </resources>
