@@ -2,6 +2,7 @@ package tw.edu.ntue.dtd.friends;
 
 import java.io.InputStream;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 
 import tw.edu.ntue.dtd.R;
@@ -43,7 +44,17 @@ public class CandidateInformationFragment extends Fragment {
 			@Override
 			public void done(List<ParseObject> listObj, ParseException exception) {
 				// TODO Auto-generated method stub
-				arrayCandidates=listObj;
+				
+				arrayCandidates=new ArrayList<ParseObject>();
+				for(int i=0;i<listObj.size();i++){
+					for(ParseObject can : listObj){
+						if(can.getNumber("Number").intValue()==i){
+							arrayCandidates.add(can);
+							break;
+						}
+					}
+				}
+				
 				initGUI(mainView);
 			}
 		});

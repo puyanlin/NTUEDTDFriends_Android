@@ -10,6 +10,7 @@ import com.parse.ParseQuery;
 import com.parse.SaveCallback;
 
 import tw.edu.ntue.dtd.R;
+import android.R.integer;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -34,7 +35,16 @@ public class VoteViewFragment extends Fragment {
 	
 	public VoteViewFragment(List<ParseObject> candidates) {
 		// TODO Auto-generated constructor stub
-		listCandidate=candidates;
+		
+		listCandidate=new ArrayList<ParseObject>();
+		for(int i=0;i<candidates.size();i++){
+			for(ParseObject can : candidates){
+				if(can.getNumber("Number").intValue()==i){
+					listCandidate.add(can);
+					break;
+				}
+			}
+		}
 	}
 	
 	@Override

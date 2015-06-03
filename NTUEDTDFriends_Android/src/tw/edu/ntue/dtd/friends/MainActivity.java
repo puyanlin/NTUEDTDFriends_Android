@@ -97,6 +97,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			}
 		});
 		
+		
 		LinearLayout ll_fbbtn=(LinearLayout) findViewById(R.id.ll_fbbtn);
 		ll_fbbtn.setOnClickListener(new OnClickListener() {
 			

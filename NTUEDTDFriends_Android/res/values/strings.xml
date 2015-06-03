@@ -18,7 +18,7 @@
     <string name="read">read</string>
     <string name="getlink">link</string>
     
-    <string name="about_content">Copyright (&#169;) 2015 NTUE DTD Alumni Association. All rights reserved.</string>
+    <string name="about_content">Copyright &#169; 2015 NTUE DTD Alumni Association. All rights reserved.</string>
     
     <string name="share">share</string>
     <string name="share_fail">Sorry,it\'s fail to share&#8230;</string>
